@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title> Spring </title>
+	  <!-- Bootstrap CSS  local-->
+	   <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	    <link rel="stylesheet" th:href="@{main.css}">
+	    <!-- Bootstrap CSS en line il faux se connecte a l'internet-->
+	 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+--></head>
+<body>
+<img th:src="@{images/centrale.jpg}" width= "15%"/>
+
+	<h1 align="center" bgcolor="blue" >Liste des etudiantes de la formation</h1>
+	<h2 align="center" bgcolor="blue" >Formation</h2>
+	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	
+	Pour ajouter un etudiant  Cliquer ici <a class="btn btn-primary" th:href="@{/add}">Cliquer</a>
+	<br/>
+	<br/>
+<!--<script src="boostrap/js/bootstrap.min.js"></script>-->
+	<table  class ="table table-striped" border="1" align ="center">
+		<tr>
+			<th>Nom</th>
+			<th>Age</th>
+			<th>Email</th>
+			<th>Adresse</th>
+		</tr>
+
+		<tr th:each="student:${sss}">
+			<td th:text="${student.nom}"></td>
+			<td th:text="${student.age}"></td>
+			<td th:text="${student.email}"></td>
+			<td th:text="${student.adresse}"></td>
+		</tr>
+	</table>
+			
+
+
+
+
+</body>
+
+</html>
